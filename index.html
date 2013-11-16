@@ -1,46 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Green Mesa : Javascript Components" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Green Mesa by green-mesa</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Green Mesa</title>
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/green-mesa">View On GitHub</a></li>
+        </nav>
+      </div><!-- end header -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/green-mesa">View on GitHub</a>
+    <div class="wrapper">
 
-          <h1 id="project_title">Green Mesa</h1>
-          <h2 id="project_tagline">Javascript Components</h2>
+      <section>
+        <div id="title">
+          <h1>Green Mesa</h1>
+          <p>Javascript Components</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/green-mesa">green-mesa</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
         <h2>
 <a name="hyperbone" class="anchor" href="#hyperbone"><span class="octicon octicon-link"></span></a>Hyperbone</h2>
 
-<p>Hyperbone is a non-framework framework, built on <a href="http://backbonejs.org/">Backbone.js</a>, for building client side applications consuming <a href="http://stateless.co/hal_specification.html">JSON HAL</a>. </p>
+<p>Hyperbone is a Hypermedia Framework, built on top of <a href="http://backbonejs.org/">Backbone.js</a>, for building client side applications. </p>
 
-<p>By 'Non-Framework', we mean that each component is distributed via the <a href="https://github.com/component/component">Component package manager</a>. Use one or all of the components as you see fit. </p>
+<p>It natively consumes <a href="http://stateless.co/hal_specification.html">JSON HAL</a> and adds custom extensions, <code>_commands</code> which can come from the server (or be added to your model prototypes in the client) to enable definition of server side interactions, which can then be bound to particular forms.</p>
 
-<p>Activity on this project is high at the moment. We hope to get a fully annotated demo application up and running soon.</p>
+<p>Unlike Backbone, Hyperbone's evented models are fully nested - It's Hyperbone all the way down - and support dot notation accessors. </p>
+
+<p>Also unlike Backbone, the view engine is far more like Angular's, in that it binds your Hypermedia models directly to the DOM. It supports templated attributes and innerText and a very very small number of custom attributes.</p>
+
+<p>It tries to stay true to Backbone's original mission which is to keep your truth out of the DOM. Properly built Hyperbone models mean that your application only manipulates the model, <strong>never</strong> the DOM. Any actual DOM level tinkering that's required should be done via View extensions, for which there's a neato API. </p>
+
+<p>The primary side effect of this framework seems to be that you can build a UI for a server side that doesn't yet exist, using <code>_commands</code> in the model prototype to simulate the desired API which server-side developers can then use as a well defined spec to build an API to. This seems pretty interesting to me, as I've not been able to work this way before. This will form a core part of the documentation for Hyperbone!</p>
+
+<p>There's no one single Hyperbone component yet. Each part of the Framework is distributed via the <a href="https://github.com/component/component">Component package manager</a>. Use one or all of the components as you see fit. </p>
+
+<p>Activity on this project is high at the moment.</p>
 
 <h3>
 <a name="hyperbone-model" class="anchor" href="#hyperbone-model"><span class="octicon octicon-link"></span></a><a href="https://github.com/green-mesa/hyperbone-model">Hyperbone Model</a>
 </h3>
 
-<p>Backbone models with Hypermedia extensions</p>
+<p>Evented Hypermedia Models with an API pretty familiar to Backbone users.</p>
 
 <h3>
 <a name="hyperbone-view" class="anchor" href="#hyperbone-view"><span class="octicon octicon-link"></span></a><a href="https://github.com/green-mesa/hyperbone-view">Hyperbone View</a>
@@ -49,19 +67,25 @@
 <p>Bind Hyperbone Models to the DOM, with special Hypermedia conventions.</p>
 
 <h3>
-<a name="todo-hyperbone-io" class="anchor" href="#todo-hyperbone-io"><span class="octicon octicon-link"></span></a>TODO: Hyperbone IO</h3>
+<a name="hyperbone-view-commands" class="anchor" href="#hyperbone-view-commands"><span class="octicon octicon-link"></span></a><a href="https://github.com/green-mesa/hyperbone-view-commands">Hyperbone View Commands</a>
+</h3>
 
-<p>HyperboneIO deals with network interactions for Hypermedia documents - loading, reloading and sending <code>_controls</code> data to the server. </p>
-
-<h3>
-<a name="todo-hyperbone-app" class="anchor" href="#todo-hyperbone-app"><span class="octicon octicon-link"></span></a>TODO: Hyperbone App</h3>
-
-<p>Routing and bringing all the others together with some helpful conventions to all the actual building of apps.</p>
+<p>Bind forms in your DOM to specific Hypermedia commands. Bind to Hyperbone Submit events. Where things start getting "interesting".</p>
 
 <h3>
-<a name="todo-hyperbone-build" class="anchor" href="#todo-hyperbone-build"><span class="octicon octicon-link"></span></a>TODO: Hyperbone Build</h3>
+<a name="coming-soon-hyperbone-io" class="anchor" href="#coming-soon-hyperbone-io"><span class="octicon octicon-link"></span></a>Coming Soon: Hyperbone IO</h3>
 
-<p>Component is a great package manager, but the build tool adds a significant file size overhead when dealing with a large number of Components. Hyperbone Build allows you to use Component as your package manager and compile your source as a self-bootstrapping application with minimal module related detritus. </p>
+<p>HyperboneIO deals with network interactions for Hypermedia documents - loading, reloading and sending <code>_command</code> data to the server. By keeping as a separate module, you're at liberty to use whatever network interaction stuff you like. </p>
+
+<h3>
+<a name="coming-soon-hyperbone-router" class="anchor" href="#coming-soon-hyperbone-router"><span class="octicon octicon-link"></span></a>Coming Soon: Hyperbone Router</h3>
+
+<p>Routing. Note how by doing this as a standalone module you can replace this with something else.</p>
+
+<h3>
+<a name="coming-soon-hyperbone" class="anchor" href="#coming-soon-hyperbone"><span class="octicon octicon-link"></span></a>Coming Soon: Hyperbone</h3>
+
+<p>One single component to add to your project that exposes the full Hyperbone experience.</p>
 
 <h2>
 <a name="backbone" class="anchor" href="#backbone"><span class="octicon octicon-link"></span></a>Backbone</h2>
@@ -78,16 +102,9 @@
 <a href="https://github.com/green-mesa/backbone-sync">Backbone Sync</a> - Warning: Also installs jQuery. Yikes.</li>
 </ul>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
