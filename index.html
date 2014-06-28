@@ -1,96 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
     <title>Green Mesa by green-mesa</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
   </head>
+
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/green-mesa">View On GitHub</a></li>
-        </nav>
-      </div><!-- end header -->
 
-    <div class="wrapper">
+    <header>
+      <div class="container">
+        <h1>Green Mesa</h1>
+        <h2>Javascript Components</h2>
 
-      <section>
-        <div id="title">
-          <h1>Green Mesa</h1>
-          <p>Javascript Components</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/green-mesa">green-mesa</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+        <section id="downloads">
+          <a href="https://github.com/green-mesa" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
+    <div class="container">
+      <section id="main_content">
         <h2>
+<a name="halogenjs" class="anchor" href="#halogenjs"><span class="octicon octicon-link"></span></a>HalogenJS</h2>
+
+<p><a href="https://halogenjs.org">HalogenJS</a> is a HAL/HAL-O JSON framework for working natively with hypermedia resources in the browser. </p>
+
+<h2>
+<a name="animation-and-experimental-modules" class="anchor" href="#animation-and-experimental-modules"><span class="octicon octicon-link"></span></a>Animation and Experimental Modules</h2>
+
+<p>Many additional modules are available on Charlotte Gore's personal Github <a href="http://github.com/charlottegore">here</a>, which tend to be available on npm with the <code>gm-</code> prefix. </p>
+
+<p>The modules are CommonJS with fluent interfaces, and many are intended for use for animation, games and web audio.</p>
+
+<h2>
+<a name="dom--value--traverse--css" class="anchor" href="#dom--value--traverse--css"><span class="octicon octicon-link"></span></a>Dom / Value / Traverse / CSS</h2>
+
+<p>Green Mesa maintain forks of <a href="https://github.com/component/dom">component-dom</a> and some of its dependencies which fixes issues around dealing with forms. This is a dependency for <a href="https://halogenjs.org">HalogenJS</a> as we do not want to have jQuery as a dependency. </p>
+
+<h2>
+<a name="route" class="anchor" href="#route"><span class="octicon octicon-link"></span></a>Route</h2>
+
+<p>Green Mesa maintain a fork of <a href="https://github.com/component/route">component-route</a> in order to have it available as an npm package.</p>
+
+<h2>
 <a name="hyperbone" class="anchor" href="#hyperbone"><span class="octicon octicon-link"></span></a>Hyperbone</h2>
 
-<p>Hyperbone is a Hypermedia Framework, built on top of <a href="http://backbonejs.org/">Backbone.js</a>, for building client side applications. </p>
-
-<p>It natively consumes <a href="http://stateless.co/hal_specification.html">JSON HAL</a> and adds custom extensions, <code>_commands</code> which can come from the server (or be added to your model prototypes in the client) to enable definition of server side interactions, which can then be bound to particular forms.</p>
-
-<p>Unlike Backbone, Hyperbone's evented models are fully nested - It's Hyperbone all the way down - and support dot notation accessors. </p>
-
-<p>Also unlike Backbone, the view engine is far more like Angular's, in that it binds your Hypermedia models directly to the DOM. It supports templated attributes and innerText and a very very small number of custom attributes.</p>
-
-<p>It tries to stay true to Backbone's original mission which is to keep your truth out of the DOM. Properly built Hyperbone models mean that your application only manipulates the model, <strong>never</strong> the DOM. Any actual DOM level tinkering that's required should be done via View extensions, for which there's a neato API. </p>
-
-<p>The primary side effect of this framework seems to be that you can build a UI for a server side that doesn't yet exist, using <code>_commands</code> in the model prototype to simulate the desired API which server-side developers can then use as a well defined spec to build an API to. This seems pretty interesting to me, as I've not been able to work this way before. This will form a core part of the documentation for Hyperbone!</p>
-
-<p>There's no one single Hyperbone component yet. Each part of the Framework is distributed via the <a href="https://github.com/component/component">Component package manager</a>. Use one or all of the components as you see fit. </p>
-
-<p>Activity on this project is high at the moment.</p>
-
-<h3>
-<a name="hyperbone-model" class="anchor" href="#hyperbone-model"><span class="octicon octicon-link"></span></a><a href="https://github.com/green-mesa/hyperbone-model">Hyperbone Model</a>
-</h3>
-
-<p>Evented Hypermedia Models with an API pretty familiar to Backbone users.</p>
-
-<h3>
-<a name="hyperbone-view" class="anchor" href="#hyperbone-view"><span class="octicon octicon-link"></span></a><a href="https://github.com/green-mesa/hyperbone-view">Hyperbone View</a>
-</h3>
-
-<p>Bind Hyperbone Models to the DOM, with special Hypermedia conventions.</p>
-
-<h3>
-<a name="hyperbone-view-commands" class="anchor" href="#hyperbone-view-commands"><span class="octicon octicon-link"></span></a><a href="https://github.com/green-mesa/hyperbone-view-commands">Hyperbone View Commands</a>
-</h3>
-
-<p>Bind forms in your DOM to specific Hypermedia commands. Bind to Hyperbone Submit events. Where things start getting "interesting".</p>
-
-<h3>
-<a name="coming-soon-hyperbone-io" class="anchor" href="#coming-soon-hyperbone-io"><span class="octicon octicon-link"></span></a>Coming Soon: Hyperbone IO</h3>
-
-<p>HyperboneIO deals with network interactions for Hypermedia documents - loading, reloading and sending <code>_command</code> data to the server. By keeping as a separate module, you're at liberty to use whatever network interaction stuff you like. </p>
-
-<h3>
-<a name="coming-soon-hyperbone-router" class="anchor" href="#coming-soon-hyperbone-router"><span class="octicon octicon-link"></span></a>Coming Soon: Hyperbone Router</h3>
-
-<p>Routing. Note how by doing this as a standalone module you can replace this with something else.</p>
-
-<h3>
-<a name="coming-soon-hyperbone" class="anchor" href="#coming-soon-hyperbone"><span class="octicon octicon-link"></span></a>Coming Soon: Hyperbone</h3>
-
-<p>One single component to add to your project that exposes the full Hyperbone experience.</p>
+<p>Hyperbone is the a collection of components for a hypermedia framework that has since become <a href="https://halogenjs.org">HalogenJS</a>. These repositories are maintained so that they will continue to be available through Component, and they're also maintained as NPM packages.</p>
 
 <h2>
 <a name="backbone" class="anchor" href="#backbone"><span class="octicon octicon-link"></span></a>Backbone</h2>
 
-<p>We have broken Backbone into discrete standalone modules so that Hyperbone can avoid loading unnecessary parts.</p>
+<p>Backbone refactored into individual components. A dependency for HalogenJS (and Hyperbone).</p>
 
 <p>We have:</p>
 
@@ -98,13 +64,10 @@
 <li><a href="https://github.com/green-mesa/backbone-events">Backbone Events</a></li>
 <li><a href="https://github.com/green-mesa/backbone-model">Backbone Model</a></li>
 <li><a href="https://github.com/green-mesa/backbone-collection">Backbone Collection</a></li>
-<li>
-<a href="https://github.com/green-mesa/backbone-sync">Backbone Sync</a> - Warning: Also installs jQuery. Yikes.</li>
 </ul>
       </section>
-
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
     
   </body>
 </html>
